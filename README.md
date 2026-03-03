@@ -1,19 +1,12 @@
-# Paul Muller — GitHub Pages site
+# Paul Muller — GitHub Pages
 
-This repo is a static GitHub Pages site (no build step).
+This is a static site for GitHub Pages.
 
 ## Edit content
-All content lives in `data/site.json`:
-- profile text, affiliations, contact links
-- news
-- publications
-- work in progress
-- CV path
+Update `data/site.json`.
 
-## Replace the headshot
-Swap `assets/img/headshot-placeholder.svg` with your image, and update the `img` tag in `index.html` if needed.
+## Replace headshot
+Replace `assets/img/headshot-placeholder.svg` with your own image (keep the same filename or update `index.html`).
 
-## Publish on GitHub Pages
-Option 1 (user site): name the repo `YOURUSERNAME.github.io` and push these files to `main`.
-
-Option 2 (project site): enable Pages in **Settings → Pages**, select `main` and `/root`.
+## CV
+Replace `assets/cv/CV_Paul_Muller.pdf` if needed.

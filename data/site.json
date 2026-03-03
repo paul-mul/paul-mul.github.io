@@ -2,29 +2,28 @@
   "profile": {
     "name": "Paul Muller",
     "title": "Associate Professor",
-    "affiliation": "Vrije Universiteit Amsterdam",
-    "affiliations": [
-      {
-        "label": "VU University Amsterdam",
-        "url": "https://research.vu.nl/"
-      },
+    "affiliation": {
+      "label": "VU University Amsterdam",
+      "url": "https://research.vu.nl"
+    },
+    "affiliated_with": [
       {
         "label": "Tinbergen Institute",
-        "url": "https://www.tinbergen.nl/"
+        "url": "https://www.tinbergen.nl"
       },
       {
         "label": "IZA",
-        "url": "https://www.iza.org/"
+        "url": "https://www.iza.org"
       },
       {
         "label": "CEPR",
-        "url": "https://cepr.org/"
+        "url": "https://cepr.org"
       }
     ],
     "roles": [
       {
         "label": "Co-organizer, Tinbergen Institute Labour Seminar Series",
-        "url": "https://tinbergen.nl/"
+        "url": "https://tinbergen.nl"
       }
     ],
     "bio": "I am Associate Professor at the VU University Amsterdam, and affiliated with Tinbergen Institute, IZA and CEPR. I am a co-organizer of the Tinbergen Institute Labour Seminar Series.",
@@ -38,7 +37,7 @@
     ],
     "highlight": {
       "text": "In 2024 I received an NWO Vidi grant to study scarcity on the Dutch labour market.",
-      "url": "https://vu.nl/en/news/2023/nwo-vidi-grant-for-paul-muller"
+      "url": "https://vu.nl"
     },
     "contact": {
       "email": "p.muller[at]vu.nl",
@@ -48,7 +47,7 @@
           "url": "https://scholar.google.com"
         },
         {
-          "label": "LinkedIn",
+          "label": "Linkedin",
           "url": "https://nl.linkedin.com"
         },
         {
@@ -78,14 +77,14 @@
       "text": "We have released a working paper containing the evaluation of an information intervention for job seekers in occupations with poor prospects in the Netherlands.",
       "links": [
         {
-          "label": "working paper",
+          "label": "Working paper",
           "url": "https://www.iza.org"
         }
       ]
     },
     {
       "date": "Jan 2025",
-      "text": "Together with Michele Belot and Philipp Kircher, we wrote a chapter for the Handbook on Labour Markets in Transition: Promoting Resilience in a World in Flux (Edited by Stéphane Carcillo and Stefano Scarpetta), called \"Navigating behavioral biases in job search: overview and digital solutions\".",
+      "text": "Together with Michele Belot and Philipp Kircher, we wrote a chapter for the 'Handbook on Labour Markets in Transition: Promoting Resilience in a World in Flux' (Edited by Stéphane Carcillo and Stefano Scarpetta), called \"Navigating behavioral biases in job search: overview and digital solutions\".",
       "links": [
         {
           "label": "Handbook",
@@ -112,7 +111,7 @@
       "text": "Our paper on the effect of tax incentives on migration in the Netherlands has been accepted for publication in the AEJ:Applied.",
       "links": [
         {
-          "label": "paper",
+          "label": "Paper",
           "url": "https://www.aeaweb.org"
         }
       ]
@@ -132,8 +131,8 @@
       "text": "I have been awarded a Vidi grant by NWO, allowing me to study scarcity on the labour market for the coming 5 years.",
       "links": [
         {
-          "label": "announcement",
-          "url": "https://vu.nl/en/news/2023/nwo-vidi-grant-for-paul-muller"
+          "label": "Announcement",
+          "url": "https://vu.nl"
         }
       ]
     },
@@ -142,7 +141,7 @@
       "text": "Marc Witte, Nadine Ketel and I are organizing the \"Field Days\" workshop on field experiments in economics on October 17-18 in Amsterdam. See the call for papers (submission deadline: May 31st 2024).",
       "links": [
         {
-          "label": "call for papers",
+          "label": "Call for papers",
           "url": "https://tinbergen.nl"
         }
       ]
@@ -152,7 +151,7 @@
       "text": "New working paper out: online job search advice for long-termed unemployed in the UK.",
       "links": [
         {
-          "label": "working paper",
+          "label": "Paper",
           "url": "https://docs.iza.org"
         }
       ]
@@ -162,7 +161,7 @@
       "text": "Our paper on the importance of DI benefits during health recovery has been accepted for publication in Journal of Health Economics.",
       "links": [
         {
-          "label": "paper",
+          "label": "Paper",
           "url": "https://doi.org"
         }
       ]
@@ -172,7 +171,7 @@
       "text": "Our paper on how wage announcements affect job search has been conditionally accepted for publication in AEJ: Macro.",
       "links": [
         {
-          "label": "paper",
+          "label": "Paper",
           "url": "https://www.aeaweb.org"
         }
       ]
@@ -182,17 +181,17 @@
       "text": "New discussion paper out on eliciting time preferences when consumption/income varies substantially (including an application on jobseekers).",
       "links": [
         {
-          "label": "discussion paper",
+          "label": "Discussion paper",
           "url": "https://papers.tinbergen.nl"
         }
       ]
     },
     {
       "date": "Jan 2021",
-      "text": "With support from the Ministry of Finance, we have started a project on evaluating the impacts of the 30% tax rule for immigrants in the Netherlands.",
+      "text": "With support from the Ministry of Finance, we have started a project on evaluating the impacts of the 30% tax rule for immigrants in the Netherlands. Using unique data on the beneficiaries of the rule, we will study the effect of the rule on immigration and wages (joint with Massimo Giuliodori and Lisa Timm).",
       "links": [
         {
-          "label": "project",
+          "label": "Project",
           "url": "https://odissei-data.nl"
         }
       ]
@@ -202,7 +201,7 @@
       "text": "New Discussion Paper available on the work resumption of DI applicants.",
       "links": [
         {
-          "label": "Discussion Paper",
+          "label": "Discussion paper",
           "url": "https://www.iza.org"
         }
       ]
@@ -212,7 +211,7 @@
       "text": "Our paper on the impact of reminders for increasing physical exercising has been accepted for publication in Experimental Economics.",
       "links": [
         {
-          "label": "paper",
+          "label": "Paper",
           "url": "https://www.dropbox.com"
         }
       ]
@@ -222,7 +221,7 @@
       "text": "Our paper on comparing econometric methods for evaluating activation programs has been accepted for publication in Journal of Applied Econometrics.",
       "links": [
         {
-          "label": "paper",
+          "label": "Paper",
           "url": "https://onlinelibrary.wiley.com"
         }
       ]
@@ -232,7 +231,7 @@
       "text": "Our paper on providing occupational advice to job seekers has been published in The Review of Economic Studies, and a summary has been published on Microeconomic Insights.",
       "links": [
         {
-          "label": "paper",
+          "label": "Paper",
           "url": "https://doi.org"
         },
         {
@@ -270,7 +269,7 @@
           "url": "https://ftp.iza.org"
         },
         {
-          "label": "VoxEU",
+          "label": "VoxEU column",
           "url": "https://voxeu.org"
         }
       ]
@@ -280,28 +279,28 @@
       "text": "Our paper on 'equilibrium effects of job search' is now accessible in the Journal of Labor Economics.",
       "links": [
         {
-          "label": "paper",
+          "label": "Paper",
           "url": "https://www.journals.uchicago.edu"
         }
       ]
     },
     {
-      "date": "October 2017",
-      "text": "I am presenting at a conference of the Swedish Public Employment Service on experiments in labor economics (October 26-27, 2017) Stockholm).",
+      "date": "October 26–27, 2017",
+      "text": "I am presenting at a conference of the Swedish Public Employment Service on experiments in labor economics (Stockholm).",
       "links": []
     },
     {
-      "date": "June 2017",
-      "text": "I am presenting in the Bristol Workshop on Economic Policy Interventions and Behaviour (June 15-16).",
+      "date": "June 15–16, 2017",
+      "text": "I am presenting in the Bristol Workshop on Economic Policy Interventions and Behaviour.",
       "links": [
         {
-          "label": "workshop",
+          "label": "Workshop",
           "url": "https://www.bristol.ac.uk"
         }
       ]
     },
     {
-      "date": "29 March 2017",
+      "date": "29 March, 2017",
       "text": "Presenting on 'wage announcements and job search' in GEW series (Gothenburg).",
       "links": [
         {
@@ -327,8 +326,7 @@
       "url": "https://academic.oup.com",
       "authors": [
         {
-          "name": "Michèle Belot",
-          "url": ""
+          "name": "Michèle Belot"
         },
         {
           "name": "Philipp Kircher",
@@ -344,8 +342,7 @@
       "url": "https://kwnsfk27.r.eu-west-1.awstrack.me",
       "authors": [
         {
-          "name": "Roger Prudon",
-          "url": ""
+          "name": "Roger Prudon"
         },
         {
           "name": "Pierre Koning",
@@ -366,15 +363,14 @@
       "url": "https://www.elgaronline.com",
       "authors": [
         {
-          "name": "Michèle Belot",
-          "url": ""
+          "name": "Michèle Belot"
         },
         {
           "name": "Philipp Kircher",
           "url": "https://philippkircher.com"
         }
       ],
-      "venue": "Chapter in Handbook on Labour Markets in Transition (edited by Stéphane Carcillo and Stefano Scarpetta).",
+      "venue": "Chapter in Handbook on Labour Markets in Transition. Edited by Stéphane Carcillo and Stefano Scarpetta.",
       "summary": "We review empirical evidence on behavioral biases in job search and discuss research on online interventions to overcome such biases.",
       "links": []
     },
@@ -383,8 +379,7 @@
       "url": "https://www.aeaweb.org",
       "authors": [
         {
-          "name": "Lisa Timm",
-          "url": ""
+          "name": "Lisa Timm"
         },
         {
           "name": "Massimo Giuliodori",
@@ -413,8 +408,7 @@
       "url": "https://www.aeaweb.org",
       "authors": [
         {
-          "name": "Michèle Belot",
-          "url": ""
+          "name": "Michèle Belot"
         },
         {
           "name": "Philipp Kircher",
@@ -425,11 +419,11 @@
       "summary": "We propose a novel method to elicitit time preferences that is robust to cases where background consumption and income vary. We validate the method in a field experiment, and show an application using job seekers (for whom income is likely to vary substantially).",
       "links": [
         {
-          "label": "supplement (theory)",
+          "label": "Suppl. material part 1 (theory)",
           "url": "https://www.dropbox.com"
         },
         {
-          "label": "supplement (experiments)",
+          "label": "Suppl. material part 2 (experiments)",
           "url": "https://www.dropbox.com"
         }
       ]
@@ -439,8 +433,7 @@
       "url": "https://doi.org",
       "authors": [
         {
-          "name": "Michèle Belot",
-          "url": ""
+          "name": "Michèle Belot"
         },
         {
           "name": "Philipp Kircher",
@@ -461,8 +454,7 @@
       "url": "https://doi.org",
       "authors": [
         {
-          "name": "Roger Prudon",
-          "url": ""
+          "name": "Roger Prudon"
         },
         {
           "name": "Pierre Koning",
@@ -508,8 +500,7 @@
       "url": "https://doi.org",
       "authors": [
         {
-          "name": "Michèle Belot",
-          "url": ""
+          "name": "Michèle Belot"
         },
         {
           "name": "Philipp Kircher",
@@ -534,8 +525,7 @@
       "url": "https://www.journals.uchicago.edu",
       "authors": [
         {
-          "name": "Pieter Gautier",
-          "url": ""
+          "name": "Pieter Gautier"
         },
         {
           "name": "Bas van der Klaauw",
@@ -599,16 +589,14 @@
       "title": "Advising Job Seekers in Occupations with Poor Prospects: A Field Experiment",
       "authors": [
         {
-          "name": "Michèle Belot",
-          "url": ""
+          "name": "Michèle Belot"
         },
         {
           "name": "Didier Fouarge",
           "url": "https://www.maastrichtuniversity.nl"
         },
         {
-          "name": "Bart de Koning",
-          "url": ""
+          "name": "Bart de Koning"
         },
         {
           "name": "Philipp Kircher",
@@ -625,14 +613,88 @@
           "url": "https://www.iza.org"
         },
         {
-          "label": "Policy summary (UWV)",
+          "label": "UWV Kennisverslag (Dutch)",
           "url": "https://www.uwv.nl"
         }
       ]
+    },
+    {
+      "title": "Supporting occupational transitions through buddy-support",
+      "authors": [
+        {
+          "name": "Michèle Belot"
+        },
+        {
+          "name": "Yvonne Engels"
+        },
+        {
+          "name": "Didier Fouarge",
+          "url": "https://www.maastrichtuniversity.nl"
+        },
+        {
+          "name": "Bart de Koning"
+        },
+        {
+          "name": "Mario Keer"
+        },
+        {
+          "name": "Philipp Kircher",
+          "url": "https://philippkircher.com"
+        },
+        {
+          "name": "Sandra Phlippen",
+          "url": "https://insights.abnamro.nl"
+        }
+      ],
+      "links": []
+    },
+    {
+      "title": "Gender gaps in wage bargaining",
+      "authors": [
+        {
+          "name": "Mark van der Meijden"
+        },
+        {
+          "name": "Lisa Timm"
+        },
+        {
+          "name": "Massimo Giuliodori",
+          "url": "https://www.uva.nl"
+        }
+      ],
+      "links": []
+    },
+    {
+      "title": "Reference-dependence in job search",
+      "authors": [
+        {
+          "name": "Marco Fongoni"
+        },
+        {
+          "name": "Bart de Koning"
+        }
+      ],
+      "links": []
+    },
+    {
+      "title": "The Scarring Effect of Short-Lived Sickness Spells for Temporary Workers",
+      "authors": [
+        {
+          "name": "Jonathan Rossi"
+        },
+        {
+          "name": "Pierre Koning",
+          "url": "https://research.vu.nl"
+        },
+        {
+          "name": "Carlos Riumallo Herl",
+          "url": "https://www.eur.nl"
+        }
+      ],
+      "links": []
     }
   ],
   "cv": {
-    "label": "CVPaul Muller.pdf",
     "path": "/assets/cv/CV_Paul_Muller.pdf"
   }
 }

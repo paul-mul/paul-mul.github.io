@@ -1,128 +1,172 @@
-async function loadSiteData() {
-  const res = await fetch('/data/site.json', { cache: 'no-store' });
-  if (!res.ok) throw new Error('Failed to load site data.');
-  return await res.json();
-}
+(function(){
+  'use strict';
 
-function el(tag, attrs={}, children=[]) {
-  const node = document.createElement(tag);
-  for (const [k,v] of Object.entries(attrs)) {
-    if (k === 'class') node.className = v;
-    else if (k.startsWith('on') && typeof v === 'function') node.addEventListener(k.slice(2), v);
-    else if (v !== null && v !== undefined) node.setAttribute(k, v);
+  const $ = (sel, root=document) => root.querySelector(sel);
+  const $$ = (sel, root=document) => Array.from(root.querySelectorAll(sel));
+
+  async function loadJSON(path){
+    const res = await fetch(path, {cache: 'no-store'});
+    if(!res.ok) throw new Error(`Failed to load ${path}: ${res.status}`);
+    return await res.json();
   }
-  for (const ch of children) node.append(ch);
-  return node;
-}
 
-function text(s){ return document.createTextNode(s); }
+  function esc(s){
+    return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  }
 
-function link(label, url, cls='badge') {
-  if (!url) return el('span', { class: cls }, [text(label)]);
-  const a = el('a', { href: url, class: cls, target:'_blank', rel:'noopener noreferrer' }, [text(label)]);
-  return a;
-}
+  function linkHTML(link){
+    if(!link || !link.url) return '';
+    const label = link.label ? esc(link.label) : esc(link.url);
+    return `<a href="${esc(link.url)}" target="_blank" rel="noopener">${label}</a>`;
+  }
 
-function renderContact(container, profile){
-  const email = profile.contact?.email ?? '';
-  const links = profile.contact?.links ?? [];
-  container.innerHTML = '';
-  container.append(
-    el('div', {}, [
-      el('div', { class:'mini' }, [text('Contact')]),
-      el('div', { style:'margin-top:8px; display:flex; gap:10px; flex-wrap:wrap; align-items:center;' }, [
-        el('span', { class:'badge' }, [text(email)]),
-        ...links.map(x => link(x.label, x.url))
-      ])
-    ])
-  );
-}
+  function joinLinks(links){
+    if(!links || !links.length) return '';
+    return links.map(linkHTML).join(' · ');
+  }
 
-function setActiveNav(){
-  const path = location.pathname.replace(/\/+$/, '');
-  document.querySelectorAll('.nav-links a').forEach(a=>{
-    const href = a.getAttribute('href').replace(/\/+$/, '');
-    if (href === path || (href === '' && path === '')) a.setAttribute('aria-current','page');
-    else a.removeAttribute('aria-current');
-  });
-}
-
-function renderNews(container, news, limit=6){
-  container.innerHTML = '';
-  const items = news.map(n=>{
-    const links = (n.links||[]).map(l=>link(l.label, l.url, 'badge'));
-    return el('div', { class:'item' }, [
-      el('div', { class:'split' }, [
-        el('h3', {}, [text(n.date)]),
-        el('div', { class:'meta' }, [])
-      ]),
-      el('p', {}, [text(n.text)]),
-      links.length ? el('div', { class:'badges' }, links) : el('div')
-    ]);
-  });
-
-  const shown = items.slice(0, limit);
-  const hidden = items.slice(limit);
-
-  const list = el('div', { class:'items' }, shown);
-  container.append(list);
-
-  if (hidden.length){
-    const btn = el('button', { class:'btn', type:'button' }, [text('Show all news')]);
-    const hiddenWrap = el('div', { class:'items', style:'display:none; margin-top:14px;' }, hidden);
-    btn.addEventListener('click', ()=>{
-      const isHidden = hiddenWrap.style.display === 'none';
-      hiddenWrap.style.display = isHidden ? '' : 'none';
-      btn.textContent = isHidden ? 'Hide news archive' : 'Show all news';
+  function renderNav(current){
+    $$('.nav a').forEach(a => {
+      if(a.getAttribute('data-nav') === current){
+        a.setAttribute('aria-current','page');
+      } else {
+        a.removeAttribute('aria-current');
+      }
     });
-    container.append(el('div', { style:'margin-top:12px;' }, [btn]));
-    container.append(hiddenWrap);
   }
-}
 
-function fmtAuthors(authors){
-  if (!authors || !authors.length) return '';
-  return authors.map(a=>{
-    if (a.url) return `<a href="${a.url}" target="_blank" rel="noopener noreferrer">${a.name}</a>`;
-    return a.name;
-  }).join(', ');
-}
+  function renderFooter(profile){
+    const el = $('#footer');
+    if(!el) return;
+    const links = (profile.contact?.links || []).map(l => `<a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.label)}</a>`).join('');
+    el.innerHTML = `
+      <div>Contact: <span class="muted">${esc(profile.contact?.email || '')}</span></div>
+      <div class="smalllinks">${links}</div>
+    `;
+  }
 
-function renderPublications(container, pubs){
-  container.innerHTML = '';
-  const items = pubs.map(p=>{
-    const badges = (p.links||[]).map(l=>link(l.label, l.url, 'badge'));
-    const metaHtml = [];
-    if (p.venue) metaHtml.push(p.venue);
-    if (p.authors?.length) metaHtml.push(`Joint with ${fmtAuthors(p.authors)}`);
-    const meta = metaHtml.join(' • ');
-    const item = el('div', { class:'item' }, [
-      el('h3', {}, [
-        el('a', { href: p.url || '#', target:'_blank', rel:'noopener noreferrer' }, [text(p.title)])
-      ]),
-      el('div', { class:'meta' }, []),
-      el('p', {}, [text(p.summary || '')]),
-      badges.length ? el('div', { class:'badges' }, badges) : el('div')
-    ]);
-    item.querySelector('.meta').innerHTML = meta;
-    return item;
+  function renderHome(data){
+    renderNav('home');
+    const p = data.profile;
+
+    $('#name').textContent = p.name;
+    $('#subtitle').textContent = `${p.title} · ${p.affiliation?.label || ''}`;
+
+    // affiliations pills
+    const pills = $('#pills');
+    const aff = [
+      {label: p.affiliation?.label, url: p.affiliation?.url},
+      ...(p.affiliated_with || []),
+      ...(p.roles || [])
+    ].filter(x => x && x.label && x.url);
+    pills.innerHTML = aff.map(x => `
+      <span class="pill"><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.label)}</a></span>
+    `).join('');
+
+    $('#bio').textContent = p.bio;
+    $('#researchIntro').textContent = p.research_intro;
+    $('#interests').innerHTML = (p.interests || []).map(x => `<li>${esc(x)}</li>`).join('');
+
+    const hl = $('#highlight');
+    if(p.highlight?.text){
+      hl.innerHTML = `<div class="callout">${esc(p.highlight.text)} ${p.highlight.url ? `(<a href="${esc(p.highlight.url)}" target="_blank" rel="noopener">link</a>)` : ''}</div>`;
+    }
+
+    // news
+    const news = data.news || [];
+    const latest = news.slice(0, 8);
+    const rest = news.slice(8);
+
+    $('#newsLatest').innerHTML = latest.map(n => `
+      <div class="paper">
+        <div class="meta">${esc(n.date || '')}</div>
+        <div>${esc(n.text || '')}${n.links && n.links.length ? ` <span class="muted">(${joinLinks(n.links)})</span>` : ''}</div>
+      </div>
+    `).join('');
+
+    const more = $('#newsMore');
+    const toggle = $('#newsToggle');
+    if(rest.length){
+      more.innerHTML = rest.map(n => `
+        <div class="paper">
+          <div class="meta">${esc(n.date || '')}</div>
+          <div>${esc(n.text || '')}${n.links && n.links.length ? ` <span class="muted">(${joinLinks(n.links)})</span>` : ''}</div>
+        </div>
+      `).join('');
+      toggle.hidden = false;
+      toggle.addEventListener('click', () => {
+        const open = more.hasAttribute('hidden') ? false : true;
+        if(open){
+          more.setAttribute('hidden','');
+          toggle.textContent = 'Show all news';
+        }else{
+          more.removeAttribute('hidden');
+          toggle.textContent = 'Hide news archive';
+        }
+      });
+    }else{
+      toggle.hidden = true;
+    }
+
+    renderFooter(p);
+  }
+
+  function renderResearch(data){
+    renderNav('research');
+    $('#pubs').innerHTML = (data.publications || []).map(pub => {
+      const authors = (pub.authors || []).map(a => a.url
+        ? `<a href="${esc(a.url)}" target="_blank" rel="noopener">${esc(a.name)}</a>`
+        : esc(a.name)
+      ).join(', ');
+      const links = joinLinks(pub.links || []);
+      return `
+        <div class="paper">
+          <h3><a href="${esc(pub.url)}" target="_blank" rel="noopener">${esc(pub.title)}</a></h3>
+          <div class="meta">${authors}</div>
+          <div class="meta">${esc(pub.venue || '')}</div>
+          <div>${esc(pub.summary || '')}</div>
+          ${links ? `<div class="btnrow"><span class="notice">${links}</span></div>` : ''}
+        </div>
+      `;
+    }).join('');
+
+    $('#wip').innerHTML = (data.work_in_progress || []).map(w => {
+      const authors = (w.authors || []).map(a => a.url
+        ? `<a href="${esc(a.url)}" target="_blank" rel="noopener">${esc(a.name)}</a>`
+        : esc(a.name)
+      ).join(', ');
+      const links = joinLinks(w.links || []);
+      return `
+        <div class="paper">
+          <h3>${esc(w.title)}</h3>
+          <div class="meta">${authors}</div>
+          ${links ? `<div class="notice">${links}</div>` : ''}
+        </div>
+      `;
+    }).join('');
+
+    renderFooter(data.profile);
+  }
+
+  function renderCV(data){
+    renderNav('cv');
+    const path = data.cv?.path || '/assets/cv/CV_Paul_Muller.pdf';
+    $('#cvDownload').setAttribute('href', path);
+    $('#cvEmbed').setAttribute('src', path);
+    renderFooter(data.profile);
+  }
+
+  document.addEventListener('DOMContentLoaded', async () => {
+    const page = document.body.getAttribute('data-page') || 'home';
+    try{
+      const data = await loadJSON('/data/site.json');
+      if(page === 'home') renderHome(data);
+      if(page === 'research') renderResearch(data);
+      if(page === 'cv') renderCV(data);
+    }catch(err){
+      console.error(err);
+      const msg = $('#loadError');
+      if(msg) msg.hidden = false;
+    }
   });
-  container.append(el('div', { class:'items' }, items));
-}
-
-function renderWIP(container, wip){
-  container.innerHTML = '';
-  const items = (wip||[]).map(w=>{
-    const badges = (w.links||[]).map(l=>link(l.label, l.url, 'badge'));
-    const item = el('div', { class:'item' }, [
-      el('h3', {}, [text(w.title)]),
-      el('div', { class:'meta' }, []),
-      badges.length ? el('div', { class:'badges' }, badges) : el('div')
-    ]);
-    item.querySelector('.meta').innerHTML = w.authors?.length ? `With ${fmtAuthors(w.authors)}` : '';
-    return item;
-  });
-  container.append(el('div', { class:'items' }, items));
-}
-
-window.Site = { loadSiteData, renderContact, renderNews, renderPublications, renderWIP, setActiveNav };
+})();

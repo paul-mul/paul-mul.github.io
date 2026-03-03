@@ -1,71 +1,49 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <meta name="description" content="Researcher profile: publications, working papers, and contact."/>
-  <title>Research — Paul Muller</title>
-  <link rel="stylesheet" href="/assets/css/styles.css"/>
-  <link rel="icon" href="data:,">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Paul Muller — Research</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <meta name="color-scheme" content="light" />
 </head>
-<body>
-  <header class="nav">
-    <div class="nav-inner">
-      <a class="brand" href="/"><span class="dot"></span><span>Paul Muller</span></a>
-      <nav class="nav-links">
-        <a href="/">Home</a>
-        <a href="/research/">Research</a>
-        <a href="/cv/">CV</a>
+<body data-page="research">
+  <header class="topbar">
+    <div class="inner">
+      <a class="brand" href="/">Paul Muller</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="/" data-nav="home">Home</a>
+        <a href="/research/" data-nav="research">Research</a>
+        <a href="/cv/" data-nav="cv">CV</a>
       </nav>
     </div>
   </header>
 
   <main class="container">
-    
-<section class="card">
-  <div class="split">
-    <div>
-      <h1 class="h1" style="margin:0">Research</h1>
-      <p class="subtitle" style="margin-top:6px">Publications and work in progress.</p>
-    </div>
-    <div class="btn-row">
-      <a class="btn" href="/cv/">CV</a>
-      <a class="btn" href="/">Home</a>
-    </div>
+    <p id="loadError" class="callout" hidden>
+      Content failed to load. Please check that <span style="font-family:var(--mono)">/data/site.json</span> exists in the repository root.
+    </p>
+
+<section class="hero" style="grid-template-columns:1fr;">
+  <div>
+    <h1>Research</h1>
+    <p class="subtitle">Published papers and work in progress</p>
   </div>
 </section>
 
-<section class="section">
-  <h2>Published papers</h2>
-  <div id="pubs"></div>
+<section class="card">
+  <div class="hd">Published papers</div>
+  <div class="bd" id="pubs"></div>
 </section>
 
-<section class="section">
-  <h2>Work in progress</h2>
-  <div id="wip"></div>
+<section class="card" style="margin-top:24px;">
+  <div class="hd">Work in progress</div>
+  <div class="bd" id="wip"></div>
 </section>
 
-<script>
-(async () => {
-  const data = await Site.loadSiteData();
-  Site.renderPublications(document.getElementById('pubs'), data.publications || []);
-  Site.renderWIP(document.getElementById('wip'), data.work_in_progress || []);
-})();
-</script>
-
-    <footer class="footer" id="footer">
-      <div id="contact"></div>
-      <div style="margin-top:10px"><small>Built for GitHub Pages.</small></div>
-    </footer>
+    <footer class="footer" id="footer"></footer>
   </main>
 
-  <script src="/assets/js/site.js"></script>
-  <script>
-    (async () => {
-      Site.setActiveNav();
-      const data = await Site.loadSiteData();
-      Site.renderContact(document.getElementById('contact'), data.profile);
-    })().catch(console.error);
-  </script>
+  <script src="/assets/js/site.js" defer></script>
 </body>
 </html>

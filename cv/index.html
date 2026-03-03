@@ -1,86 +1,50 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <meta name="description" content="Researcher profile: publications, working papers, and contact."/>
-  <title>CV — Paul Muller</title>
-  <link rel="stylesheet" href="/assets/css/styles.css"/>
-  <link rel="icon" href="data:,">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Paul Muller — CV</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <meta name="color-scheme" content="light" />
 </head>
-<body>
-  <header class="nav">
-    <div class="nav-inner">
-      <a class="brand" href="/"><span class="dot"></span><span>Paul Muller</span></a>
-      <nav class="nav-links">
-        <a href="/">Home</a>
-        <a href="/research/">Research</a>
-        <a href="/cv/">CV</a>
+<body data-page="cv">
+  <header class="topbar">
+    <div class="inner">
+      <a class="brand" href="/">Paul Muller</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="/" data-nav="home">Home</a>
+        <a href="/research/" data-nav="research">Research</a>
+        <a href="/cv/" data-nav="cv">CV</a>
       </nav>
     </div>
   </header>
 
   <main class="container">
-    
-<section class="card">
-  <div class="split">
-    <div>
-      <h1 class="h1" style="margin:0">CV</h1>
-      <p class="subtitle" style="margin-top:6px">Download or view the PDF.</p>
+    <p id="loadError" class="callout" hidden>
+      Content failed to load. Please check that <span style="font-family:var(--mono)">/data/site.json</span> exists in the repository root.
+    </p>
+
+<section class="hero" style="grid-template-columns:1fr;">
+  <div>
+    <h1>CV</h1>
+    <p class="subtitle">Download or view the PDF</p>
+    <div class="btnrow">
+      <a class="btn" id="cvDownload" href="/assets/cv/CV_Paul_Muller.pdf" target="_blank" rel="noopener">Download CV (PDF)</a>
     </div>
-    <div class="btn-row">
-      <a class="btn" href="/research/">Research</a>
-      <a class="btn" href="/">Home</a>
-    </div>
-  </div>
-  <hr class="sep"/>
-  <div class="btn-row" id="cvbtns"></div>
-  <div style="margin-top:16px">
-    <iframe id="cvframe" title="CV PDF viewer" style="width:100%; height:820px; border:1px solid var(--border); border-radius: 14px; background: rgba(255,255,255,.03)"></iframe>
-    <div class="mini" style="margin-top:8px">If the PDF viewer doesn’t work on your device, use the download button above.</div>
   </div>
 </section>
 
-<script>
-(async () => {
-  const data = await Site.loadSiteData();
-  const cv = data.cv || {};
-  const path = cv.path || '/assets/cv/CV_Paul_Muller.pdf';
+<section class="card">
+  <div class="hd">Preview</div>
+  <div class="bd">
+    <iframe id="cvEmbed" title="CV PDF" src="/assets/cv/CV_Paul_Muller.pdf" style="width:100%; height: 75vh; border:1px solid var(--border); border-radius:10px;"></iframe>
+    <p class="notice" style="margin-top:10px;">If the preview does not load on mobile, use the download button above.</p>
+  </div>
+</section>
 
-  const btns = document.getElementById('cvbtns');
-  btns.innerHTML = '';
-  const a1 = document.createElement('a');
-  a1.className = 'btn primary';
-  a1.href = path;
-  a1.setAttribute('download','');
-  a1.textContent = 'Download CV (PDF)';
-  btns.appendChild(a1);
-
-  const a2 = document.createElement('a');
-  a2.className = 'btn';
-  a2.href = path;
-  a2.target = '_blank';
-  a2.rel = 'noopener noreferrer';
-  a2.textContent = 'Open in new tab';
-  btns.appendChild(a2);
-
-  document.getElementById('cvframe').src = path;
-})();
-</script>
-
-    <footer class="footer" id="footer">
-      <div id="contact"></div>
-      <div style="margin-top:10px"><small>Built for GitHub Pages.</small></div>
-    </footer>
+    <footer class="footer" id="footer"></footer>
   </main>
 
-  <script src="/assets/js/site.js"></script>
-  <script>
-    (async () => {
-      Site.setActiveNav();
-      const data = await Site.loadSiteData();
-      Site.renderContact(document.getElementById('contact'), data.profile);
-    })().catch(console.error);
-  </script>
+  <script src="/assets/js/site.js" defer></script>
 </body>
 </html>
