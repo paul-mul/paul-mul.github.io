@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta name="description" content="Researcher profile: publications, working papers, and contact."/>
+  <title>Paul Muller — Research</title>
+  <link rel="stylesheet" href="/assets/css/styles.css"/>
+  <link rel="icon" href="data:,">
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="/"><span class="dot"></span><span>Paul Muller</span></a>
+      <nav class="nav-links">
+        <a href="/">Home</a>
+        <a href="/research/">Research</a>
+        <a href="/cv/">CV</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    
+<section class="hero">
+  <div class="avatar">
+    <img src="/assets/img/headshot-placeholder.svg" alt="Headshot placeholder">
+  </div>
+  <div>
+    <h1 class="h1" id="name">Paul Muller</h1>
+    <p class="subtitle" id="titleline"></p>
+    <div class="pills" id="affils"></div>
+    <div class="btn-row" style="margin-top:16px">
+      <a class="btn primary" href="/cv/">View CV</a>
+      <a class="btn" href="/research/">Research</a>
+    </div>
+  </div>
+</section>
+
+<div class="grid">
+  <section class="card">
+    <h2>About</h2>
+    <p id="bio"></p>
+    <p id="research_intro"></p>
+    <ul class="list" id="interests"></ul>
+
+    <div class="callout" id="highlight"></div>
+  </section>
+
+  <section class="card">
+    <div class="split">
+      <h2>News</h2>
+      <div class="mini">Latest updates</div>
+    </div>
+    <div id="news"></div>
+  </section>
+</div>
+
+<script>
+(async () => {
+  const data = await Site.loadSiteData();
+  const p = data.profile;
+
+  document.getElementById('titleline').textContent = `${p.title} · ${p.affiliation}`;
+  document.getElementById('bio').textContent = p.bio || '';
+  document.getElementById('research_intro').textContent = p.research_intro || '';
+
+  const affils = document.getElementById('affils');
+  affils.innerHTML = '';
+  (p.affiliations || []).forEach(a => {
+    const el = document.createElement('a');
+    el.className = 'pill';
+    el.href = a.url;
+    el.target = '_blank';
+    el.rel = 'noopener noreferrer';
+    el.innerHTML = `<strong>${a.label}</strong>`;
+    affils.appendChild(el);
+  });
+
+  const interests = document.getElementById('interests');
+  interests.innerHTML = '';
+  (p.interests || []).forEach(i => {
+    const li = document.createElement('li');
+    li.textContent = i;
+    interests.appendChild(li);
+  });
+
+  const highlight = document.getElementById('highlight');
+  const h = p.highlight || {};
+  highlight.innerHTML = '';
+  const t = document.createElement('div');
+  t.innerHTML = `<strong>Highlight</strong><div style="margin-top:6px; color: var(--muted)">${h.text || ''}</div>`;
+  highlight.appendChild(t);
+  if (h.url){
+    const a = document.createElement('a');
+    a.className = 'btn';
+    a.style.marginTop = '12px';
+    a.href = h.url;
+    a.target = '_blank';
+    a.rel = 'noopener noreferrer';
+    a.textContent = 'Read more';
+    highlight.appendChild(a);
+  }
+
+  Site.renderNews(document.getElementById('news'), data.news || [], 6);
+})();
+</script>
+
+    <footer class="footer" id="footer">
+      <div id="contact"></div>
+      <div style="margin-top:10px"><small>Built for GitHub Pages.</small></div>
+    </footer>
+  </main>
+
+  <script src="/assets/js/site.js"></script>
+  <script>
+    (async () => {
+      Site.setActiveNav();
+      const data = await Site.loadSiteData();
+      Site.renderContact(document.getElementById('contact'), data.profile);
+    })().catch(console.error);
+  </script>
+</body>
+</html>

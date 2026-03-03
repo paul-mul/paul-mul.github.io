@@ -1,0 +1,638 @@
+{
+  "profile": {
+    "name": "Paul Muller",
+    "title": "Associate Professor",
+    "affiliation": "Vrije Universiteit Amsterdam",
+    "affiliations": [
+      {
+        "label": "VU University Amsterdam",
+        "url": "https://research.vu.nl/"
+      },
+      {
+        "label": "Tinbergen Institute",
+        "url": "https://www.tinbergen.nl/"
+      },
+      {
+        "label": "IZA",
+        "url": "https://www.iza.org/"
+      },
+      {
+        "label": "CEPR",
+        "url": "https://cepr.org/"
+      }
+    ],
+    "roles": [
+      {
+        "label": "Co-organizer, Tinbergen Institute Labour Seminar Series",
+        "url": "https://tinbergen.nl/"
+      }
+    ],
+    "bio": "I am Associate Professor at the VU University Amsterdam, and affiliated with Tinbergen Institute, IZA and CEPR. I am a co-organizer of the Tinbergen Institute Labour Seminar Series.",
+    "research_intro": "My research interests are (empirical) labor economics and applied microeconomics. I have been using both field experiments and administrative data in my studies and have worked topics such as",
+    "interests": [
+      "the role of occupational information in job search",
+      "job search assistance programs and their (in)direct effects",
+      "family policies (such as parental leave and childcare subsidies) and labor market participation",
+      "disability insurance and the labor market",
+      "taxation and migration"
+    ],
+    "highlight": {
+      "text": "In 2024 I received an NWO Vidi grant to study scarcity on the Dutch labour market.",
+      "url": "https://vu.nl/en/news/2023/nwo-vidi-grant-for-paul-muller"
+    },
+    "contact": {
+      "email": "p.muller[at]vu.nl",
+      "links": [
+        {
+          "label": "Google citations",
+          "url": "https://scholar.google.com"
+        },
+        {
+          "label": "LinkedIn",
+          "url": "https://nl.linkedin.com"
+        },
+        {
+          "label": "Bluesky",
+          "url": "https://bsky.app"
+        },
+        {
+          "label": "ORCID id",
+          "url": "https://orcid.org"
+        }
+      ]
+    }
+  },
+  "news": [
+    {
+      "date": "June 2025",
+      "text": "Why do temporary workers in the Netherlands face higher disability insurance risks? Our paper has now been published in Labour Economics.",
+      "links": [
+        {
+          "label": "Our paper",
+          "url": "https://doi.org"
+        }
+      ]
+    },
+    {
+      "date": "May 2025",
+      "text": "We have released a working paper containing the evaluation of an information intervention for job seekers in occupations with poor prospects in the Netherlands.",
+      "links": [
+        {
+          "label": "working paper",
+          "url": "https://www.iza.org"
+        }
+      ]
+    },
+    {
+      "date": "Jan 2025",
+      "text": "Together with Michele Belot and Philipp Kircher, we wrote a chapter for the Handbook on Labour Markets in Transition: Promoting Resilience in a World in Flux (Edited by Stéphane Carcillo and Stefano Scarpetta), called \"Navigating behavioral biases in job search: overview and digital solutions\".",
+      "links": [
+        {
+          "label": "Handbook",
+          "url": "https://www.elgaronline.com"
+        },
+        {
+          "label": "Chapter",
+          "url": "https://www.elgaronline.com"
+        }
+      ]
+    },
+    {
+      "date": "Nov 2024",
+      "text": "Can information about alternative occupations benefit long-term unemployed? Our paper has now been accepted for publication in the Economic Journal.",
+      "links": [
+        {
+          "label": "Our paper",
+          "url": "https://docs.iza.org"
+        }
+      ]
+    },
+    {
+      "date": "Sept 2024",
+      "text": "Our paper on the effect of tax incentives on migration in the Netherlands has been accepted for publication in the AEJ:Applied.",
+      "links": [
+        {
+          "label": "paper",
+          "url": "https://www.aeaweb.org"
+        }
+      ]
+    },
+    {
+      "date": "May 2024",
+      "text": "A UWV Kennisverslag has been published with the first results of our intervention to stimulate occupational mobility among unemployed job seekers in the Netherlands.",
+      "links": [
+        {
+          "label": "UWV Kennisverslag",
+          "url": "https://www.uwv.nl"
+        }
+      ]
+    },
+    {
+      "date": "July 2023",
+      "text": "I have been awarded a Vidi grant by NWO, allowing me to study scarcity on the labour market for the coming 5 years.",
+      "links": [
+        {
+          "label": "announcement",
+          "url": "https://vu.nl/en/news/2023/nwo-vidi-grant-for-paul-muller"
+        }
+      ]
+    },
+    {
+      "date": "May 2024",
+      "text": "Marc Witte, Nadine Ketel and I are organizing the \"Field Days\" workshop on field experiments in economics on October 17-18 in Amsterdam. See the call for papers (submission deadline: May 31st 2024).",
+      "links": [
+        {
+          "label": "call for papers",
+          "url": "https://tinbergen.nl"
+        }
+      ]
+    },
+    {
+      "date": "July 2022",
+      "text": "New working paper out: online job search advice for long-termed unemployed in the UK.",
+      "links": [
+        {
+          "label": "working paper",
+          "url": "https://docs.iza.org"
+        }
+      ]
+    },
+    {
+      "date": "Jan 2022",
+      "text": "Our paper on the importance of DI benefits during health recovery has been accepted for publication in Journal of Health Economics.",
+      "links": [
+        {
+          "label": "paper",
+          "url": "https://doi.org"
+        }
+      ]
+    },
+    {
+      "date": "Sep 2021",
+      "text": "Our paper on how wage announcements affect job search has been conditionally accepted for publication in AEJ: Macro.",
+      "links": [
+        {
+          "label": "paper",
+          "url": "https://www.aeaweb.org"
+        }
+      ]
+    },
+    {
+      "date": "Feb 2021",
+      "text": "New discussion paper out on eliciting time preferences when consumption/income varies substantially (including an application on jobseekers).",
+      "links": [
+        {
+          "label": "discussion paper",
+          "url": "https://papers.tinbergen.nl"
+        }
+      ]
+    },
+    {
+      "date": "Jan 2021",
+      "text": "With support from the Ministry of Finance, we have started a project on evaluating the impacts of the 30% tax rule for immigrants in the Netherlands.",
+      "links": [
+        {
+          "label": "project",
+          "url": "https://odissei-data.nl"
+        }
+      ]
+    },
+    {
+      "date": "Dec 2020",
+      "text": "New Discussion Paper available on the work resumption of DI applicants.",
+      "links": [
+        {
+          "label": "Discussion Paper",
+          "url": "https://www.iza.org"
+        }
+      ]
+    },
+    {
+      "date": "Nov 2020",
+      "text": "Our paper on the impact of reminders for increasing physical exercising has been accepted for publication in Experimental Economics.",
+      "links": [
+        {
+          "label": "paper",
+          "url": "https://www.dropbox.com"
+        }
+      ]
+    },
+    {
+      "date": "Feb 2020",
+      "text": "Our paper on comparing econometric methods for evaluating activation programs has been accepted for publication in Journal of Applied Econometrics.",
+      "links": [
+        {
+          "label": "paper",
+          "url": "https://onlinelibrary.wiley.com"
+        }
+      ]
+    },
+    {
+      "date": "July 2019",
+      "text": "Our paper on providing occupational advice to job seekers has been published in The Review of Economic Studies, and a summary has been published on Microeconomic Insights.",
+      "links": [
+        {
+          "label": "paper",
+          "url": "https://doi.org"
+        },
+        {
+          "label": "Microeconomic Insights",
+          "url": "https://microeconomicinsights.org"
+        }
+      ]
+    },
+    {
+      "date": "January 2019",
+      "text": "A column on our wage-posting experiment can be found here.",
+      "links": [
+        {
+          "label": "VoxEU column",
+          "url": "https://voxeu.org"
+        }
+      ]
+    },
+    {
+      "date": "October 2018",
+      "text": "Working paper now available for our study on behavioral hurdles to exercising at the gym.",
+      "links": [
+        {
+          "label": "Working paper",
+          "url": "https://gupea.ub.gu.se"
+        }
+      ]
+    },
+    {
+      "date": "September 2018",
+      "text": "Working paper now available for our experiment on wage posting and job search (and column on Voxeu).",
+      "links": [
+        {
+          "label": "Working paper",
+          "url": "https://ftp.iza.org"
+        },
+        {
+          "label": "VoxEU",
+          "url": "https://voxeu.org"
+        }
+      ]
+    },
+    {
+      "date": "July 2018",
+      "text": "Our paper on 'equilibrium effects of job search' is now accessible in the Journal of Labor Economics.",
+      "links": [
+        {
+          "label": "paper",
+          "url": "https://www.journals.uchicago.edu"
+        }
+      ]
+    },
+    {
+      "date": "October 2017",
+      "text": "I am presenting at a conference of the Swedish Public Employment Service on experiments in labor economics (October 26-27, 2017) Stockholm).",
+      "links": []
+    },
+    {
+      "date": "June 2017",
+      "text": "I am presenting in the Bristol Workshop on Economic Policy Interventions and Behaviour (June 15-16).",
+      "links": [
+        {
+          "label": "workshop",
+          "url": "https://www.bristol.ac.uk"
+        }
+      ]
+    },
+    {
+      "date": "29 March 2017",
+      "text": "Presenting on 'wage announcements and job search' in GEW series (Gothenburg).",
+      "links": [
+        {
+          "label": "GEW series",
+          "url": "https://economics.handels.gu.se"
+        }
+      ]
+    },
+    {
+      "date": "February 2017",
+      "text": "New IZA discussion paper available on comparing econometric evaluation methods.",
+      "links": [
+        {
+          "label": "IZA discussion paper",
+          "url": "https://ftp.iza.org"
+        }
+      ]
+    }
+  ],
+  "publications": [
+    {
+      "title": "Do the Long-term Unemployed Benefit from Automated Occupational Advice during Online Job Search?",
+      "url": "https://academic.oup.com",
+      "authors": [
+        {
+          "name": "Michèle Belot",
+          "url": ""
+        },
+        {
+          "name": "Philipp Kircher",
+          "url": "https://philippkircher.com"
+        }
+      ],
+      "venue": "Economic Journal, Volume 136, Issue 673, January 2026, Pages 184–206",
+      "summary": "We insert occupational suggestions into an online job search platform, that is provided to long-term unemployed by a private job search assistance provider. Evaluation through an RCT shows positive impacts on job finding and occupational mobility.",
+      "links": []
+    },
+    {
+      "title": "Why do temporary workers have higher disability insurance risks?",
+      "url": "https://kwnsfk27.r.eu-west-1.awstrack.me",
+      "authors": [
+        {
+          "name": "Roger Prudon",
+          "url": ""
+        },
+        {
+          "name": "Pierre Koning",
+          "url": "https://www.universiteitleiden.nl"
+        }
+      ],
+      "venue": "Labour Economics, Volume 96, October 2025",
+      "summary": "Temporary workers have higher disability risks than permanent workers. We show that in the Netherlands this is not explained by selection or higher risk of illness in temporary jobs. Instead, the difference arises during sickness, as a result of lower employer commitment and lack of labour market opportunities.",
+      "links": [
+        {
+          "label": "ESB (in Dutch)",
+          "url": "https://esb.nu"
+        }
+      ]
+    },
+    {
+      "title": "Navigating behavioral biases in job search: overview and digital solutions",
+      "url": "https://www.elgaronline.com",
+      "authors": [
+        {
+          "name": "Michèle Belot",
+          "url": ""
+        },
+        {
+          "name": "Philipp Kircher",
+          "url": "https://philippkircher.com"
+        }
+      ],
+      "venue": "Chapter in Handbook on Labour Markets in Transition (edited by Stéphane Carcillo and Stefano Scarpetta).",
+      "summary": "We review empirical evidence on behavioral biases in job search and discuss research on online interventions to overcome such biases.",
+      "links": []
+    },
+    {
+      "title": "Tax incentives for migrants with mid-level earnings: evidence from the Netherlands",
+      "url": "https://www.aeaweb.org",
+      "authors": [
+        {
+          "name": "Lisa Timm",
+          "url": ""
+        },
+        {
+          "name": "Massimo Giuliodori",
+          "url": "https://www.uva.nl"
+        }
+      ],
+      "venue": "American Economic Journal: Applied Economics, 17 (3): 42–79, July 2025",
+      "summary": "Migrants moving to the Netherlands for employment enjoy a substantial tax exemption. We show (by considering a reform of the tax rule in 2012) that the exemption strongly increased arriving migrants over the past decade.",
+      "links": [
+        {
+          "label": "ESB (in Dutch)",
+          "url": "https://esb.nu"
+        },
+        {
+          "label": "EenVandaag (2023)",
+          "url": "https://eenvandaag.avrotros.nl"
+        },
+        {
+          "label": "EenVandaag (2025)",
+          "url": "https://eenvandaag.avrotros.nl"
+        }
+      ]
+    },
+    {
+      "title": "Eliciting time preferences when income and consumption vary: Theory, validation & application to job search",
+      "url": "https://www.aeaweb.org",
+      "authors": [
+        {
+          "name": "Michèle Belot",
+          "url": ""
+        },
+        {
+          "name": "Philipp Kircher",
+          "url": "https://philippkircher.com"
+        }
+      ],
+      "venue": "American Economic Journal: Microeconomics, 17(1), February 2025",
+      "summary": "We propose a novel method to elicitit time preferences that is robust to cases where background consumption and income vary. We validate the method in a field experiment, and show an application using job seekers (for whom income is likely to vary substantially).",
+      "links": [
+        {
+          "label": "supplement (theory)",
+          "url": "https://www.dropbox.com"
+        },
+        {
+          "label": "supplement (experiments)",
+          "url": "https://www.dropbox.com"
+        }
+      ]
+    },
+    {
+      "title": "How wage announcements affect job search - a field experiment",
+      "url": "https://doi.org",
+      "authors": [
+        {
+          "name": "Michèle Belot",
+          "url": ""
+        },
+        {
+          "name": "Philipp Kircher",
+          "url": "https://philippkircher.com"
+        }
+      ],
+      "venue": "American Economic Journal: Macroeconomics, 14(4), 2022",
+      "summary": "By assigning random wages to pairs of otherwise similar job ads, we show that job seekers respond to perceived competition: higher wages attract more interest, but some job seekers prefer the lower wage job.",
+      "links": [
+        {
+          "label": "VoxEU column",
+          "url": "https://cepr.org"
+        }
+      ]
+    },
+    {
+      "title": "Do Disability Benefits Hinder Work Resumption After Recovery?",
+      "url": "https://doi.org",
+      "authors": [
+        {
+          "name": "Roger Prudon",
+          "url": ""
+        },
+        {
+          "name": "Pierre Koning",
+          "url": "https://www.universiteitleiden.nl"
+        }
+      ],
+      "venue": "Journal of Health Economics, Volume 82, March 2022",
+      "summary": "We consider the outflow rates from disability insurance: by estimating the response to health recovery we show that awarded DI applicants return to work substantially less than rejected DI applicants.",
+      "links": []
+    },
+    {
+      "title": "Experimental evidence of limited attention at the gym",
+      "url": "https://link-springer-com.vu-nl.idm.oclc.org",
+      "authors": [
+        {
+          "name": "Wolfgang Habla",
+          "url": "https://www.zew.de"
+        }
+      ],
+      "venue": "Experimental Economics, 24, 2021",
+      "summary": "Using a randomized field experiment, we show that email reminders positively affect members' gym visits. Using detailed booking / canceling data for gym classes, we explore how planning for future gym visits is affected.",
+      "links": []
+    },
+    {
+      "title": "Comparing econometric methods to empirically evaluate activation programs for job seekers",
+      "url": "https://onlinelibrary.wiley.com",
+      "authors": [
+        {
+          "name": "Bas van der Klaauw",
+          "url": "https://personal.vu.nl"
+        },
+        {
+          "name": "Arjan Heyma",
+          "url": "https://www.seo.nl"
+        }
+      ],
+      "venue": "Journal of Applied Econometrics, Volume 35, Issue 5, August 2020",
+      "summary": "We compare three distinct econometric techniques for estimating the impact of privately provided job search assistance in the Netherlands. We find that exploiting non-experimental variation in program participation leads to results that are (qualitatively) similar to those from evaluating a natural experiment.",
+      "links": []
+    },
+    {
+      "title": "Providing advice to job seekers at low cost: An experimental study on online advice",
+      "url": "https://doi.org",
+      "authors": [
+        {
+          "name": "Michèle Belot",
+          "url": ""
+        },
+        {
+          "name": "Philipp Kircher",
+          "url": "https://philippkircher.com"
+        }
+      ],
+      "venue": "The Review of Economic Studies, Volume 86, Issue 4, July 2019",
+      "summary": "We develop and evaluate experimentally an online tool that provides occupational advice (based on labor market data) to job seekers. We find that the advice affects participants' job search strategies and improves prospects of job interviews for a subset.",
+      "links": [
+        {
+          "label": "VoxEU column",
+          "url": "https://cepr.org"
+        },
+        {
+          "label": "Microeconomic Insights",
+          "url": "https://microeconomicinsights.org"
+        }
+      ]
+    },
+    {
+      "title": "Estimating equilibrium effects of job search assistance",
+      "url": "https://www.journals.uchicago.edu",
+      "authors": [
+        {
+          "name": "Pieter Gautier",
+          "url": ""
+        },
+        {
+          "name": "Bas van der Klaauw",
+          "url": "https://personal.vu.nl"
+        },
+        {
+          "name": "Michael Rosholm",
+          "url": "https://pure.au.dk"
+        },
+        {
+          "name": "Michael Svarer",
+          "url": "https://pure.au.dk"
+        }
+      ],
+      "venue": "Journal of Labor Economics, vol 36, No. 4, October 2018",
+      "summary": "Using data from a Danish field experiment, we show that job search assistance programs may have unintended consequences, by reducing job prospects for job seekers that do not participate.",
+      "links": [
+        {
+          "label": "VoxEU column",
+          "url": "https://cepr.org"
+        }
+      ]
+    },
+    {
+      "title": "Childcare Subsidies and Labor Supply: Evidence from a Large Dutch Reform",
+      "url": "https://www.sciencedirect.com",
+      "authors": [
+        {
+          "name": "Leon Bettendorf",
+          "url": "https://www.cpb.nl"
+        },
+        {
+          "name": "Egbert Jongen",
+          "url": "https://www.universiteitleiden.nl"
+        }
+      ],
+      "venue": "Labour Economics, Volume 36, October 2015",
+      "summary": "Evaluating a large reform in the Netherlands (2005), we show that higher childcare subsidies can increase labor supply of mothers with young children, although the effect is modest relative to the subsidy expenditures.",
+      "links": [
+        {
+          "label": "ESB (in Dutch)",
+          "url": "https://esb.nu"
+        },
+        {
+          "label": "CPB Notitie (in Dutch)",
+          "url": "https://www.cpb.nl"
+        },
+        {
+          "label": "Volkskrant",
+          "url": "https://www.volkskrant.nl"
+        },
+        {
+          "label": "AD",
+          "url": "https://www.ad.nl"
+        }
+      ]
+    }
+  ],
+  "work_in_progress": [
+    {
+      "title": "Advising Job Seekers in Occupations with Poor Prospects: A Field Experiment",
+      "authors": [
+        {
+          "name": "Michèle Belot",
+          "url": ""
+        },
+        {
+          "name": "Didier Fouarge",
+          "url": "https://www.maastrichtuniversity.nl"
+        },
+        {
+          "name": "Bart de Koning",
+          "url": ""
+        },
+        {
+          "name": "Philipp Kircher",
+          "url": "https://philippkircher.com"
+        },
+        {
+          "name": "Sandra Phlippen",
+          "url": "https://insights.abnamro.nl"
+        }
+      ],
+      "links": [
+        {
+          "label": "Discussion paper",
+          "url": "https://www.iza.org"
+        },
+        {
+          "label": "Policy summary (UWV)",
+          "url": "https://www.uwv.nl"
+        }
+      ]
+    }
+  ],
+  "cv": {
+    "label": "CVPaul Muller.pdf",
+    "path": "/assets/cv/CV_Paul_Muller.pdf"
+  }
+}

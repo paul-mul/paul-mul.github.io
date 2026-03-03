@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta name="description" content="Researcher profile: publications, working papers, and contact."/>
+  <title>Research — Paul Muller</title>
+  <link rel="stylesheet" href="/assets/css/styles.css"/>
+  <link rel="icon" href="data:,">
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="/"><span class="dot"></span><span>Paul Muller</span></a>
+      <nav class="nav-links">
+        <a href="/">Home</a>
+        <a href="/research/">Research</a>
+        <a href="/cv/">CV</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    
+<section class="card">
+  <div class="split">
+    <div>
+      <h1 class="h1" style="margin:0">Research</h1>
+      <p class="subtitle" style="margin-top:6px">Publications and work in progress.</p>
+    </div>
+    <div class="btn-row">
+      <a class="btn" href="/cv/">CV</a>
+      <a class="btn" href="/">Home</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Published papers</h2>
+  <div id="pubs"></div>
+</section>
+
+<section class="section">
+  <h2>Work in progress</h2>
+  <div id="wip"></div>
+</section>
+
+<script>
+(async () => {
+  const data = await Site.loadSiteData();
+  Site.renderPublications(document.getElementById('pubs'), data.publications || []);
+  Site.renderWIP(document.getElementById('wip'), data.work_in_progress || []);
+})();
+</script>
+
+    <footer class="footer" id="footer">
+      <div id="contact"></div>
+      <div style="margin-top:10px"><small>Built for GitHub Pages.</small></div>
+    </footer>
+  </main>
+
+  <script src="/assets/js/site.js"></script>
+  <script>
+    (async () => {
+      Site.setActiveNav();
+      const data = await Site.loadSiteData();
+      Site.renderContact(document.getElementById('contact'), data.profile);
+    })().catch(console.error);
+  </script>
+</body>
+</html>
