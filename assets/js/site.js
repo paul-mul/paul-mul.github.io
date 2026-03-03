@@ -1,172 +1,170 @@
 (function(){
-  'use strict';
-
-  const $ = (sel, root=document) => root.querySelector(sel);
-  const $$ = (sel, root=document) => Array.from(root.querySelectorAll(sel));
-
-  async function loadJSON(path){
-    const res = await fetch(path, {cache: 'no-store'});
-    if(!res.ok) throw new Error(`Failed to load ${path}: ${res.status}`);
-    return await res.json();
+  function el(tag, attrs={}, children=[]){
+    const n=document.createElement(tag);
+    for(const [k,v] of Object.entries(attrs||{})){
+      if(k==="class") n.className=v;
+      else if(k==="html") n.innerHTML=v;
+      else if(k.startsWith("on") && typeof v==="function") n.addEventListener(k.slice(2), v);
+      else n.setAttribute(k, v);
+    }
+    for(const c of (children||[])){
+      if(c==null) continue;
+      n.appendChild(typeof c==="string" ? document.createTextNode(c) : c);
+    }
+    return n;
   }
 
-  function esc(s){
-    return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  function escapeHtml(s){ return String(s).replace(/[&<>"']/g, m=>({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[m])); }
+
+  async function loadSiteData(){
+    // 1) try embedded JSON
+    const embedded = document.getElementById("site-data");
+    if(embedded && embedded.textContent.trim()){
+      try{ return JSON.parse(embedded.textContent); }catch(e){}
+    }
+    // 2) try fetch (cache-bust)
+    try{
+      const res = await fetch("/data/site.json?v="+Date.now(), {cache:"no-store"});
+      if(res.ok) return await res.json();
+    }catch(e){}
+    // 3) last attempt: relative fetch (in case of subpath)
+    try{
+      const rel = new URL("data/site.json?v="+Date.now(), document.baseURI).toString();
+      const res = await fetch(rel, {cache:"no-store"});
+      if(res.ok) return await res.json();
+    }catch(e){}
+    return null;
   }
 
-  function linkHTML(link){
-    if(!link || !link.url) return '';
-    const label = link.label ? esc(link.label) : esc(link.url);
-    return `<a href="${esc(link.url)}" target="_blank" rel="noopener">${label}</a>`;
-  }
-
-  function joinLinks(links){
-    if(!links || !links.length) return '';
-    return links.map(linkHTML).join(' · ');
-  }
-
-  function renderNav(current){
-    $$('.nav a').forEach(a => {
-      if(a.getAttribute('data-nav') === current){
-        a.setAttribute('aria-current','page');
-      } else {
-        a.removeAttribute('aria-current');
-      }
+  function setActiveNav(){
+    const path = location.pathname.replace(/\/+$/,"/"); // normalize
+    document.querySelectorAll("[data-nav]").forEach(a=>{
+      const target = a.getAttribute("href");
+      if(!target) return;
+      const t = new URL(target, location.origin).pathname.replace(/\/+$/,"/");
+      if(t===path) a.setAttribute("aria-current","page");
     });
   }
 
-  function renderFooter(profile){
-    const el = $('#footer');
-    if(!el) return;
-    const links = (profile.contact?.links || []).map(l => `<a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.label)}</a>`).join('');
-    el.innerHTML = `
-      <div>Contact: <span class="muted">${esc(profile.contact?.email || '')}</span></div>
-      <div class="smalllinks">${links}</div>
-    `;
-  }
-
   function renderHome(data){
-    renderNav('home');
-    const p = data.profile;
+    const p=data.profile;
+    document.getElementById("name").textContent = p.name;
+    document.getElementById("titleline").textContent = `${p.title}, ${p.affiliation}`;
+    const aff = document.getElementById("affiliations");
+    aff.innerHTML="";
+    for(const a of (p.affiliations||[])){
+      aff.appendChild(el("a",{href:a.url,target:"_blank",rel:"noopener"},[a.label]));
+      aff.appendChild(document.createTextNode(" · "));
+    }
+    if(aff.lastChild) aff.removeChild(aff.lastChild);
 
-    $('#name').textContent = p.name;
-    $('#subtitle').textContent = `${p.title} · ${p.affiliation?.label || ''}`;
+    const about=document.getElementById("about");
+    about.innerHTML="";
+    about.appendChild(el("p",{},[p.bio]));
+    about.appendChild(el("p",{},[p.research_intro]));
+    const ul=el("ul",{class:"list"});
+    (p.interests||[]).forEach(i=>ul.appendChild(el("li",{},[i])));
+    about.appendChild(ul);
 
-    // affiliations pills
-    const pills = $('#pills');
-    const aff = [
-      {label: p.affiliation?.label, url: p.affiliation?.url},
-      ...(p.affiliated_with || []),
-      ...(p.roles || [])
-    ].filter(x => x && x.label && x.url);
-    pills.innerHTML = aff.map(x => `
-      <span class="pill"><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.label)}</a></span>
-    `).join('');
-
-    $('#bio').textContent = p.bio;
-    $('#researchIntro').textContent = p.research_intro;
-    $('#interests').innerHTML = (p.interests || []).map(x => `<li>${esc(x)}</li>`).join('');
-
-    const hl = $('#highlight');
-    if(p.highlight?.text){
-      hl.innerHTML = `<div class="callout">${esc(p.highlight.text)} ${p.highlight.url ? `(<a href="${esc(p.highlight.url)}" target="_blank" rel="noopener">link</a>)` : ''}</div>`;
+    const highlight=document.getElementById("highlight");
+    highlight.innerHTML="";
+    if(p.highlight && p.highlight.text){
+      highlight.appendChild(el("div",{class:"card"},[
+        el("div",{class:"meta"},["Highlight"]),
+        el("div",{},[
+          p.highlight.url ? el("a",{href:p.highlight.url,target:"_blank",rel:"noopener"},[p.highlight.text]) : p.highlight.text
+        ])
+      ]));
     }
 
-    // news
-    const news = data.news || [];
-    const latest = news.slice(0, 8);
-    const rest = news.slice(8);
+    const news=document.getElementById("news");
+    news.innerHTML="";
+    const items=data.news||[];
+    if(!items.length){ news.appendChild(el("p",{class:"muted"},["No news items found."])); return; }
+    items.slice(0,25).forEach(n=>{
+      const links=(n.links||[]).map(l=>el("a",{href:l.url,target:"_blank",rel:"noopener"},[l.label]));
+      const linkSpan = el("span",{},[]);
+      links.forEach((a,idx)=>{ if(idx) linkSpan.appendChild(document.createTextNode(" · ")); linkSpan.appendChild(a); });
+      news.appendChild(el("div",{class:"card"},[
+        el("div",{class:"meta"},[n.date]),
+        el("div",{},[n.text]),
+        (n.links&&n.links.length)? el("div",{class:"pills"},[(linkSpan)]) : null
+      ]));
+    });
 
-    $('#newsLatest').innerHTML = latest.map(n => `
-      <div class="paper">
-        <div class="meta">${esc(n.date || '')}</div>
-        <div>${esc(n.text || '')}${n.links && n.links.length ? ` <span class="muted">(${joinLinks(n.links)})</span>` : ''}</div>
-      </div>
-    `).join('');
-
-    const more = $('#newsMore');
-    const toggle = $('#newsToggle');
-    if(rest.length){
-      more.innerHTML = rest.map(n => `
-        <div class="paper">
-          <div class="meta">${esc(n.date || '')}</div>
-          <div>${esc(n.text || '')}${n.links && n.links.length ? ` <span class="muted">(${joinLinks(n.links)})</span>` : ''}</div>
-        </div>
-      `).join('');
-      toggle.hidden = false;
-      toggle.addEventListener('click', () => {
-        const open = more.hasAttribute('hidden') ? false : true;
-        if(open){
-          more.setAttribute('hidden','');
-          toggle.textContent = 'Show all news';
-        }else{
-          more.removeAttribute('hidden');
-          toggle.textContent = 'Hide news archive';
-        }
-      });
-    }else{
-      toggle.hidden = true;
-    }
-
-    renderFooter(p);
+    renderFooter(data);
   }
 
   function renderResearch(data){
-    renderNav('research');
-    $('#pubs').innerHTML = (data.publications || []).map(pub => {
-      const authors = (pub.authors || []).map(a => a.url
-        ? `<a href="${esc(a.url)}" target="_blank" rel="noopener">${esc(a.name)}</a>`
-        : esc(a.name)
-      ).join(', ');
-      const links = joinLinks(pub.links || []);
-      return `
-        <div class="paper">
-          <h3><a href="${esc(pub.url)}" target="_blank" rel="noopener">${esc(pub.title)}</a></h3>
-          <div class="meta">${authors}</div>
-          <div class="meta">${esc(pub.venue || '')}</div>
-          <div>${esc(pub.summary || '')}</div>
-          ${links ? `<div class="btnrow"><span class="notice">${links}</span></div>` : ''}
-        </div>
-      `;
-    }).join('');
+    const pubs=document.getElementById("pubs");
+    pubs.innerHTML="";
+    (data.publications||[]).forEach(pub=>{
+      const authors = (pub.authors||[]).map(a => a.url ? `<a href="${escapeHtml(a.url)}" target="_blank" rel="noopener">${escapeHtml(a.name)}</a>` : escapeHtml(a.name)).join(", ");
+      const extras = pub.links||[];
+      const extraEl = extras.length ? el("div",{class:"pills"}, extras.map(l=>el("a",{class:"pill",href:l.url,target:"_blank",rel:"noopener"},[l.label]))) : null;
+      pubs.appendChild(el("div",{class:"card"},[
+        el("h3",{},[ el("a",{href:pub.url,target:"_blank",rel:"noopener"},[pub.title]) ]),
+        el("div",{class:"meta",html: authors}),
+        pub.venue ? el("div",{class:"meta"},[pub.venue]) : null,
+        pub.summary ? el("p",{},[pub.summary]) : null,
+        extraEl
+      ]));
+    });
 
-    $('#wip').innerHTML = (data.work_in_progress || []).map(w => {
-      const authors = (w.authors || []).map(a => a.url
-        ? `<a href="${esc(a.url)}" target="_blank" rel="noopener">${esc(a.name)}</a>`
-        : esc(a.name)
-      ).join(', ');
-      const links = joinLinks(w.links || []);
-      return `
-        <div class="paper">
-          <h3>${esc(w.title)}</h3>
-          <div class="meta">${authors}</div>
-          ${links ? `<div class="notice">${links}</div>` : ''}
-        </div>
-      `;
-    }).join('');
+    const wip=document.getElementById("wip");
+    wip.innerHTML="";
+    (data.work_in_progress||[]).forEach(item=>{
+      const authors = (item.authors||[]).map(a => a.url ? `<a href="${escapeHtml(a.url)}" target="_blank" rel="noopener">${escapeHtml(a.name)}</a>` : escapeHtml(a.name)).join(", ");
+      const links = (item.links||[]).map(l=>el("a",{class:"pill",href:l.url,target:"_blank",rel:"noopener"},[l.label]));
+      wip.appendChild(el("div",{class:"card"},[
+        el("h3",{},[item.title]),
+        el("div",{class:"meta",html: authors}),
+        links.length ? el("div",{class:"pills"}, links) : null
+      ]));
+    });
 
-    renderFooter(data.profile);
+    renderFooter(data);
   }
 
   function renderCV(data){
-    renderNav('cv');
-    const path = data.cv?.path || '/assets/cv/CV_Paul_Muller.pdf';
-    $('#cvDownload').setAttribute('href', path);
-    $('#cvEmbed').setAttribute('src', path);
-    renderFooter(data.profile);
+    const cvPath = data.cv && data.cv.path ? data.cv.path : "/assets/cv/CV_Paul_Muller.pdf";
+    const dl=document.getElementById("cv-download");
+    dl.setAttribute("href", cvPath);
+    const frame=document.getElementById("cv-frame");
+    frame.setAttribute("src", cvPath);
+    renderFooter(data);
   }
 
-  document.addEventListener('DOMContentLoaded', async () => {
-    const page = document.body.getAttribute('data-page') || 'home';
-    try{
-      const data = await loadJSON('/data/site.json');
-      if(page === 'home') renderHome(data);
-      if(page === 'research') renderResearch(data);
-      if(page === 'cv') renderCV(data);
-    }catch(err){
-      console.error(err);
-      const msg = $('#loadError');
-      if(msg) msg.hidden = false;
+  function renderFooter(data){
+    const p=data.profile;
+    const f=document.getElementById("footer");
+    if(!f) return;
+    f.innerHTML="";
+    const left = el("div",{},[
+      el("span",{class:"muted"},["Contact: "]),
+      el("span",{},[p.contact?.email || ""])
+    ]);
+    const right = el("div",{},[]);
+    (p.contact?.links||[]).forEach((l,idx)=>{
+      if(idx) right.appendChild(document.createTextNode(" · "));
+      right.appendChild(el("a",{href:l.url,target:"_blank",rel:"noopener"},[l.label]));
+    });
+    f.appendChild(left);
+    f.appendChild(el("div",{style:"margin-top:6px"},[right]));
+  }
+
+  async function boot(page){
+    setActiveNav();
+    const data = await loadSiteData();
+    if(!data){
+      const msg = document.getElementById("load-error");
+      if(msg) msg.style.display="block";
+      return;
     }
-  });
+    if(page==="home") renderHome(data);
+    if(page==="research") renderResearch(data);
+    if(page==="cv") renderCV(data);
+  }
+
+  window.SiteBoot = { boot };
 })();

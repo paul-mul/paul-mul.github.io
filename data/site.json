@@ -2,11 +2,12 @@
   "profile": {
     "name": "Paul Muller",
     "title": "Associate Professor",
-    "affiliation": {
-      "label": "VU University Amsterdam",
-      "url": "https://research.vu.nl"
-    },
-    "affiliated_with": [
+    "affiliation": "VU University Amsterdam",
+    "affiliations": [
+      {
+        "label": "VU University Amsterdam",
+        "url": "https://research.vu.nl"
+      },
       {
         "label": "Tinbergen Institute",
         "url": "https://www.tinbergen.nl"
@@ -47,7 +48,7 @@
           "url": "https://scholar.google.com"
         },
         {
-          "label": "Linkedin",
+          "label": "LinkedIn",
           "url": "https://nl.linkedin.com"
         },
         {
@@ -77,21 +78,21 @@
       "text": "We have released a working paper containing the evaluation of an information intervention for job seekers in occupations with poor prospects in the Netherlands.",
       "links": [
         {
-          "label": "Working paper",
+          "label": "working paper",
           "url": "https://www.iza.org"
         }
       ]
     },
     {
       "date": "Jan 2025",
-      "text": "Together with Michele Belot and Philipp Kircher, we wrote a chapter for the 'Handbook on Labour Markets in Transition: Promoting Resilience in a World in Flux' (Edited by Stéphane Carcillo and Stefano Scarpetta), called \"Navigating behavioral biases in job search: overview and digital solutions\".",
+      "text": "Together with Michele Belot and Philipp Kircher, we wrote a chapter for the 'Handbook on Labour Markets in Transition: Promoting Resilience in a World in Flux' (Edited by Stéphane Carcillo and Stefano Scarpetta), called \"Navigating behavioral biases in job search: overview and digital solutions\"",
       "links": [
         {
-          "label": "Handbook",
+          "label": "Handbook on Labour Markets in Transition: Promoting Resilience in a World in Flux",
           "url": "https://www.elgaronline.com"
         },
         {
-          "label": "Chapter",
+          "label": "Navigating behavioral biases in job search: overview and digital solutions",
           "url": "https://www.elgaronline.com"
         }
       ]
@@ -111,7 +112,7 @@
       "text": "Our paper on the effect of tax incentives on migration in the Netherlands has been accepted for publication in the AEJ:Applied.",
       "links": [
         {
-          "label": "Paper",
+          "label": "the effect of tax incentives on migration in the Netherlands",
           "url": "https://www.aeaweb.org"
         }
       ]
@@ -131,17 +132,17 @@
       "text": "I have been awarded a Vidi grant by NWO, allowing me to study scarcity on the labour market for the coming 5 years.",
       "links": [
         {
-          "label": "Announcement",
+          "label": "me to study scarcity on the labour market for the coming 5 years",
           "url": "https://vu.nl"
         }
       ]
     },
     {
       "date": "May 2024",
-      "text": "Marc Witte, Nadine Ketel and I are organizing the \"Field Days\" workshop on field experiments in economics on October 17-18 in Amsterdam. See the call for papers (submission deadline: May 31st 2024).",
+      "text": "Marc Witte, Nadine Ketel and I are organizing the “Field Days” workshop on field experiments in economics on October 17-18 in Amsterdam. See the call for papers (submission deadline: May 31st 2024).",
       "links": [
         {
-          "label": "Call for papers",
+          "label": "call for papers",
           "url": "https://tinbergen.nl"
         }
       ]
@@ -151,7 +152,7 @@
       "text": "New working paper out: online job search advice for long-termed unemployed in the UK.",
       "links": [
         {
-          "label": "Paper",
+          "label": "online job search advice for long-termed unemployed in the UK",
           "url": "https://docs.iza.org"
         }
       ]
@@ -161,7 +162,7 @@
       "text": "Our paper on the importance of DI benefits during health recovery has been accepted for publication in Journal of Health Economics.",
       "links": [
         {
-          "label": "Paper",
+          "label": "the importance of DI benefits during health recovery",
           "url": "https://doi.org"
         }
       ]
@@ -171,7 +172,7 @@
       "text": "Our paper on how wage announcements affect job search has been conditionally accepted for publication in AEJ: Macro.",
       "links": [
         {
-          "label": "Paper",
+          "label": "how wage announcements affect job search",
           "url": "https://www.aeaweb.org"
         }
       ]
@@ -181,17 +182,17 @@
       "text": "New discussion paper out on eliciting time preferences when consumption/income varies substantially (including an application on jobseekers).",
       "links": [
         {
-          "label": "Discussion paper",
+          "label": "discussion paper",
           "url": "https://papers.tinbergen.nl"
         }
       ]
     },
     {
       "date": "Jan 2021",
-      "text": "With support from the Ministry of Finance, we have started a project on evaluating the impacts of the 30% tax rule for immigrants in the Netherlands. Using unique data on the beneficiaries of the rule, we will study the effect of the rule on immigration and wages (joint with Massimo Giuliodori and Lisa Timm).",
+      "text": "With support from the Ministry of Finance, we have started a project on evaluating the impacts of the 30% tax rule for immigrants in the Netherlands.",
       "links": [
         {
-          "label": "Project",
+          "label": "project",
           "url": "https://odissei-data.nl"
         }
       ]
@@ -201,7 +202,7 @@
       "text": "New Discussion Paper available on the work resumption of DI applicants.",
       "links": [
         {
-          "label": "Discussion paper",
+          "label": "Discussion Paper",
           "url": "https://www.iza.org"
         }
       ]
@@ -211,7 +212,7 @@
       "text": "Our paper on the impact of reminders for increasing physical exercising has been accepted for publication in Experimental Economics.",
       "links": [
         {
-          "label": "Paper",
+          "label": "paper",
           "url": "https://www.dropbox.com"
         }
       ]
@@ -221,7 +222,7 @@
       "text": "Our paper on comparing econometric methods for evaluating activation programs has been accepted for publication in Journal of Applied Econometrics.",
       "links": [
         {
-          "label": "Paper",
+          "label": "Our paper",
           "url": "https://onlinelibrary.wiley.com"
         }
       ]
@@ -231,7 +232,7 @@
       "text": "Our paper on providing occupational advice to job seekers has been published in The Review of Economic Studies, and a summary has been published on Microeconomic Insights.",
       "links": [
         {
-          "label": "Paper",
+          "label": "paper on providing occupational advice to job seekers",
           "url": "https://doi.org"
         },
         {
@@ -245,7 +246,7 @@
       "text": "A column on our wage-posting experiment can be found here.",
       "links": [
         {
-          "label": "VoxEU column",
+          "label": "here",
           "url": "https://voxeu.org"
         }
       ]
@@ -269,7 +270,7 @@
           "url": "https://ftp.iza.org"
         },
         {
-          "label": "VoxEU column",
+          "label": "column on Voxeu",
           "url": "https://voxeu.org"
         }
       ]
@@ -279,28 +280,23 @@
       "text": "Our paper on 'equilibrium effects of job search' is now accessible in the Journal of Labor Economics.",
       "links": [
         {
-          "label": "Paper",
+          "label": "equilibrium effects of job search",
           "url": "https://www.journals.uchicago.edu"
         }
       ]
     },
     {
-      "date": "October 26–27, 2017",
-      "text": "I am presenting at a conference of the Swedish Public Employment Service on experiments in labor economics (Stockholm).",
-      "links": []
-    },
-    {
-      "date": "June 15–16, 2017",
-      "text": "I am presenting in the Bristol Workshop on Economic Policy Interventions and Behaviour.",
+      "date": "June 2017",
+      "text": "Presenting in the Bristol Workshop on Economic Policy Interventions and Behaviour (June 15-16).",
       "links": [
         {
-          "label": "Workshop",
+          "label": "Bristol Workshop on Economic Policy Interventions and Behaviour",
           "url": "https://www.bristol.ac.uk"
         }
       ]
     },
     {
-      "date": "29 March, 2017",
+      "date": "March 2017",
       "text": "Presenting on 'wage announcements and job search' in GEW series (Gothenburg).",
       "links": [
         {
@@ -416,14 +412,14 @@
         }
       ],
       "venue": "American Economic Journal: Microeconomics, 17(1), February 2025",
-      "summary": "We propose a novel method to elicitit time preferences that is robust to cases where background consumption and income vary. We validate the method in a field experiment, and show an application using job seekers (for whom income is likely to vary substantially).",
+      "summary": "We propose a novel method to elicitit time preferences that is robust to cases where background consumption  and income vary. We validate the method in a field experiment, and show an application using job seekers (for whom income is likely to vary substantially).",
       "links": [
         {
-          "label": "Suppl. material part 1 (theory)",
+          "label": "part 1 (theory)",
           "url": "https://www.dropbox.com"
         },
         {
-          "label": "Suppl. material part 2 (experiments)",
+          "label": "part 2 (experiments)",
           "url": "https://www.dropbox.com"
         }
       ]
@@ -613,7 +609,7 @@
           "url": "https://www.iza.org"
         },
         {
-          "label": "UWV Kennisverslag (Dutch)",
+          "label": "UWV Kennisverslag",
           "url": "https://www.uwv.nl"
         }
       ]
