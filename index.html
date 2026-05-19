@@ -46,14 +46,8 @@
             <a class="button" href="https://drive.google.com/open?id=0B8v-GFLq4K0FSGJWUFNqa3ZjNzg&amp;resourcekey=0-B0E4r2ADpZhkcLunkWq-Mg">Open CV</a>
           </div>
         </div>
-        <aside class="profile-panel" aria-label="Profile image placeholder">
-          <div class="photo-placeholder">
-            <span>Photo placeholder</span>
-          </div>
-          <p>
-            Replace this placeholder later with a headshot at
-            <code>assets/profile.jpg</code>.
-          </p>
+        <aside class="profile-panel" aria-label="Portrait of Paul Muller">
+          <img class="profile-photo" src="profile.jpg" alt="Paul Muller">
         </aside>
       </section>
 
@@ -83,11 +77,16 @@
       </section>
 
       <section class="section" id="news">
-        <div class="section-heading">
-          <p class="section-kicker">Updates</p>
-          <h2>News</h2>
+        <div class="section-heading news-heading">
+          <div>
+            <p class="section-kicker">Updates</p>
+            <h2>News</h2>
+          </div>
+          <button class="button news-toggle" type="button" aria-expanded="false" aria-controls="news-list">
+            Show all news
+          </button>
         </div>
-        <div class="news-list">
+        <div class="news-list is-collapsed" id="news-list">
           <article><time>June 2025</time><p>Why do temporary workers in the Netherlands face higher disability insurance risks? <a href="https://doi.org/10.1016/j.labeco.2025.102719">Our paper</a> has now been published in Labour Economics.</p></article>
           <article><time>May 2025</time><p>We have released a <a href="https://www.iza.org/publications/dp/17905/advising-job-seekers-in-occupations-with-poor-prospects-a-field-experiment">working paper</a> containing the evaluation of an information intervention for job seekers in occupations with poor prospects in the Netherlands.</p></article>
           <article><time>Jan 2025</time><p>Together with Michele Belot and Philipp Kircher, we wrote a chapter for the <a href="https://www.elgaronline.com/edcollbook/book/9781839106958/9781839106958.xml?rskey=VYB6Tf&amp;result=1">Handbook on Labour Markets in Transition</a>, called <a href="https://www.elgaronline.com/edcollchap/book/9781839106958/book-part-9781839106958-14.xml">Navigating behavioral biases in job search: overview and digital solutions</a>.</p></article>

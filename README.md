@@ -19,21 +19,6 @@ You can host this in either of these ways:
 
 For a personal academic homepage, the user site is usually the cleanest option.
 
-## Replacing the Photo Placeholder
+## Profile Photo
 
-Add a photo at `assets/profile.jpg`, then replace the placeholder block in `index.html` with:
-
-```html
-<img src="assets/profile.jpg" alt="Paul Muller" class="profile-photo">
-```
-
-Then add this to `styles.css`:
-
-```css
-.profile-photo {
-  aspect-ratio: 4 / 5;
-  display: block;
-  object-fit: cover;
-  width: 100%;
-}
-```
+The site currently uses `profile.jpg` from the repository root. Replace that file with a newer photo whenever needed, keeping the same filename.
