@@ -82,7 +82,7 @@
             <p class="section-kicker">Updates</p>
             <h2>News</h2>
           </div>
-          <button class="button news-toggle" type="button" aria-expanded="false" aria-controls="news-list">
+          <button class="button news-toggle" type="button" aria-expanded="false" aria-controls="news-list" onclick="toggleNewsItems()">
             Show all news
           </button>
         </div>
@@ -290,6 +290,20 @@
       </div>
     </footer>
 
+    <script>
+      function toggleNewsItems() {
+        const newsList = document.querySelector(".news-list");
+        const newsToggle = document.querySelector(".news-toggle");
+
+        if (!newsList || !newsToggle) {
+          return;
+        }
+
+        const isCollapsed = newsList.classList.toggle("is-collapsed");
+        newsToggle.setAttribute("aria-expanded", String(!isCollapsed));
+        newsToggle.textContent = isCollapsed ? "Show all news" : "Show fewer news items";
+      }
+    </script>
     <script src="script.js"></script>
   </body>
 </html>

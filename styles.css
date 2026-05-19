@@ -110,8 +110,8 @@ a:hover {
 
 .hero {
   display: grid;
-  gap: clamp(36px, 6vw, 86px);
-  grid-template-columns: minmax(0, 1fr) minmax(280px, 360px);
+  gap: clamp(30px, 5vw, 64px);
+  grid-template-columns: minmax(0, 1fr) minmax(170px, 220px);
   margin: 0 auto;
   max-width: 1180px;
   min-height: calc(78vh - 72px);
@@ -189,7 +189,9 @@ h3 {
   align-self: center;
   background: #f8f4ec;
   border: 1px solid var(--line);
-  padding: 18px;
+  justify-self: end;
+  max-width: 220px;
+  padding: 12px;
   box-shadow: var(--shadow);
 }
 
@@ -430,7 +432,8 @@ h3 {
   }
 
   .profile-panel {
-    max-width: 380px;
+    justify-self: start;
+    max-width: 200px;
   }
 
   .news-list article,
