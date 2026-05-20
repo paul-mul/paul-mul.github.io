@@ -4,6 +4,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const newsToggle = document.querySelector(".news-toggle");
   const newsList = document.querySelector(".news-list");
 
+  document.querySelectorAll('a[href^="http"], a[href^="//"]').forEach((link) => {
+    link.setAttribute("target", "_blank");
+    link.setAttribute("rel", "noopener noreferrer");
+  });
+
   toggle?.addEventListener("click", () => {
     const isOpen = nav?.classList.toggle("is-open") ?? false;
     toggle.setAttribute("aria-expanded", String(isOpen));
